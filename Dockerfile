@@ -39,8 +39,8 @@ RUN npm install --global --omit=dev \
   @openai/codex@latest \
   opencode-ai
 
-# create runtime data directory (Railway disk should mount here)
-RUN mkdir -p /paperclip \
+# Create runtime directories
+RUN mkdir -p /paperclip/instances/default/logs \
   && chown -R node:node /paperclip
 
 ENV NODE_ENV=production \
